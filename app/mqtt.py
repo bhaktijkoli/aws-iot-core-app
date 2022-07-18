@@ -52,6 +52,7 @@ def publish(topic, message, qos=QOS.AT_LEAST_ONCE):
     operation.activate(request)
     future_response = operation.get_response()
     future_response.result(TIMEOUT)
+    logger.info(f"Published to {topic}, message: f{message}")
 
 
 def subscribe(topic, qos=QOS.AT_MOST_ONCE):
@@ -63,3 +64,4 @@ def subscribe(topic, qos=QOS.AT_MOST_ONCE):
     operation.activate(request)
     future_response = operation.get_response()
     future_response.result(TIMEOUT)
+    logger.info(f"Subscribed to {topic}")

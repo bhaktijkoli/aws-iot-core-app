@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from loguru import logger
-from app.mqtt import connect, subscribe
+from app.mqtt import connect, publish, subscribe
 
 load_dotenv()
 
@@ -16,7 +16,11 @@ def start():
 
     connect()
 
-    subscribe("test")
+    logger.info("Connected")
+
+    subscribe("test/topic")
+
+    publish("test/topic", "Hello from greengrass")
 
     try:
         print("Press Ctrl+C to exit")
