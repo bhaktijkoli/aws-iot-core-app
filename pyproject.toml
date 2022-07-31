@@ -11,6 +11,7 @@ python-dotenv = "^0.20.0"
 awsiotsdk = "^1.11.3"
 loguru = "^0.6.0"
 fastapi = {extras = ["all"], version = "^0.79.0"}
+uuid = "^1.30"
 
 [tool.poetry.dev-dependencies]
 black = {version = "^22.6.0", allow-prereleases = true}
